@@ -1,25 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import {PhotoViewer} from "./components/PhotoViewer";
+import {ImageSelector} from "./components/ImageSelector";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [currentImg, setCurrentImg] = useState("https://picsum.photos/id/600/1600/900.jpg");
+    return(
+        <div>
+            <PhotoViewer imgUrl={currentImg}/>
+            <ImageSelector updateImg={setCurrentImg}/>
+        </div>
+    )
 }
 
 export default App;
