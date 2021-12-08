@@ -1,9 +1,9 @@
 import './MiniPhoto.css';
 
-export const MiniPhoto = ({imgUrl, updateImg}) => {
+export const MiniPhoto = ({imgUrl, updateMiniImg}) => {
     return (
         <div>
-            <img src={imgUrl} onClick={() => updateImg({imgUrl})} alt="" className={MiniPhoto}/>
+            <img src={imgUrl} onClick={() => updateMiniImg(imgUrl)} className="MiniPhoto"/>
         </div>
     );
 }
